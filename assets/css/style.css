@@ -1128,3 +1128,48 @@ html, body {
     padding-bottom: 1.5rem;
 }
 
+
+/* Mobile Menu Header Fix */
+.mobile-nav-header {
+    justify-content: flex-end; /* Align close button to right */
+    margin-bottom: 1.5rem;
+}
+
+/* Improved Language Switcher Design */
+.mobile-lang-switch {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.mobile-lang-switch button {
+    flex: 0 0 auto;
+    min-width: 60px;
+    padding: 10px 16px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--secondary-color);
+}
+
+.mobile-lang-switch button:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(227, 28, 35, 0.2);
+}
+
+.mobile-lang-switch button.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
