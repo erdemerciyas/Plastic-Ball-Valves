@@ -1039,3 +1039,62 @@ html, body {
     }
 }
 
+
+/* Usage of !important to force overrides on mobile */
+@media (max-width: 768px) {
+    /* Center ZigZag Content */
+    .zigzag-row {
+        flex-direction: column !important;
+        text-align: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .zigzag-content {
+        text-align: center !important;
+        padding: 0 1rem !important;
+        width: 100% !important;
+    }
+
+    .zigzag-content h3::after {
+        margin: 10px auto !important; /* Center the underline */
+    }
+
+    .zigzag-content ul {
+        text-align: left; /* Keep list items readable */
+        display: inline-block; /* Allow centering of the list block itself */
+        max-width: 100%;
+    }
+
+    /* Fix Image Overflow */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    .zigzag-image {
+        width: 100% !important;
+        overflow: visible !important; /* Allow shadow if needed, but safer to hide */
+        display: flex;
+        justify-content: center;
+    }
+    
+    .zigzag-image img {
+        width: 100% !important;
+        object-fit: contain;
+    }
+
+    /* Prevent Section Overflow */
+    section {
+        padding: 4rem 1rem !important; /* Reduce side padding to give more space to content */
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Font Sizing Fixes */
+    h2 { font-size: 1.6rem !important; word-wrap: break-word; }
+    h3 { font-size: 1.4rem !important; }
+}
+
