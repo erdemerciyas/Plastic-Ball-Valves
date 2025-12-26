@@ -833,3 +833,21 @@ footer {
 .video-thumb {
     background: #000; /* Fallback for missing/loading images */
 }
+
+/* Enhanced Spacing for ZigZag */
+.zigzag-row {
+    gap: 8rem !important; /* Force larger gap */
+}
+.zigzag-content {
+    padding-left: 2rem;
+}
+.zigzag-image {
+    box-shadow: none !important; /* Remove shadow to reduce visual noise if close */
+    background: transparent;
+}
+@media (min-width: 1400px) {
+    .zigzag-section {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
