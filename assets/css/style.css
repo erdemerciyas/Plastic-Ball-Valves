@@ -1098,3 +1098,18 @@ html, body {
     h3 { font-size: 1.4rem !important; }
 }
 
+
+/* Mobile Animation Fix - Critical for reducing 'ezilme' */
+@media (max-width: 768px) {
+    .animate-on-scroll {
+        opacity: 1 !important;
+        transform: none !important; /* Disable slide effects that push content off-screen */
+        transition: none !important;
+    }
+    
+    .zigzag-content ul {
+        display: inline-block;
+        text-align: left; /* Keep bullets left-aligned */
+        padding-left: 1.5rem; /* Ensure bullets are visible */
+    }
+}
