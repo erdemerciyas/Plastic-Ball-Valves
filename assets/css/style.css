@@ -851,3 +851,121 @@ footer {
         margin: 0 auto;
     }
 }
+
+/* Mobile Navigation Styles */
+.desktop-nav {
+    display: block;
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+    z-index: 1001;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden by default */
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--white);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 1002;
+    padding: 2rem;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.mobile-nav-header img {
+    height: 40px;
+}
+
+.close-mobile-menu {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    margin-bottom: auto; /* Push lang switch to bottom or just separate */
+}
+
+.mobile-nav-links li {
+    margin-bottom: 1.5rem;
+}
+
+.mobile-nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    transition: color 0.3s;
+}
+
+.mobile-nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.mobile-lang-switch {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+}
+
+.mobile-lang-switch button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mobile-lang-switch button:hover,
+.mobile-lang-switch button.active { /* You might need custom logic to toggle active class on these too */
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    /* Adjust ZigZag for Mobile */
+    .zigzag-row {
+        gap: 3rem !important; /* Reduce huge gap on mobile */
+    }
+    .zigzag-content {
+        padding-left: 0;
+    }
+}
+

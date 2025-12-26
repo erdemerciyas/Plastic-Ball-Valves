@@ -23,7 +23,9 @@
         <a href="#home" class="logo">
             <img src="assets/img/logo.png" alt="Polinar Mühendislik">
         </a>
-        <nav>
+
+        <!-- Desktop Nav -->
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="#home" data-i18n="nav_home">Ana Sayfa</a></li>
                 <li><a href="#overview" data-i18n="nav_about">Hakkında</a></li>
@@ -38,6 +40,32 @@
                 </li>
             </ul>
         </nav>
+
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Mobile Nav Overlay -->
+        <div class="mobile-nav">
+            <div class="mobile-nav-header">
+                <img src="assets/img/logo.png" alt="Polinar">
+                <div class="close-mobile-menu"><i class="fas fa-times"></i></div>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#home" data-i18n="nav_home" onclick="closeMobileMenu()">Ana Sayfa</a></li>
+                <li><a href="#overview" data-i18n="nav_about" onclick="closeMobileMenu()">Hakkında</a></li>
+                <li><a href="#features" data-i18n="nav_features" onclick="closeMobileMenu()">Özellikler</a></li>
+                <li><a href="#gallery" data-i18n="nav_gallery" onclick="closeMobileMenu()">Galeri</a></li>
+                <li><a href="#process" data-i18n="nav_technical" onclick="closeMobileMenu()">Teknik</a></li>
+                <li><a href="#contact" data-i18n="nav_contact" onclick="closeMobileMenu()">İletişim</a></li>
+            </ul>
+            <div class="mobile-lang-switch">
+                <button onclick="changeLanguage('tr')">TR</button>
+                <button onclick="changeLanguage('en')">EN</button>
+                <button onclick="changeLanguage('ru')">RU</button>
+            </div>
+        </div>
     </header>
 
     <section id="home" class="hero">

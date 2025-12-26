@@ -113,3 +113,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('selectedLanguage') || 'tr';
     changeLanguage(savedLang);
 
+
+    // Mobile Menu Logic
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const closeBtn = document.querySelector('.close-mobile-menu');
+
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+        });
+    }
+
+    window.closeMobileMenu = function() {
+        if (mobileNav) {
+            mobileNav.classList.remove('active');
+        }
+    };
+
