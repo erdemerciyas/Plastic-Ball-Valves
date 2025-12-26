@@ -969,3 +969,73 @@ footer {
     }
 }
 
+
+/* Mobile Overflow Fixes */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    /* Header & Logo */
+    header {
+        padding: 0.5rem 5%;
+    }
+    .logo img {
+        height: 40px; /* Reduce logo size on mobile */
+    }
+
+    /* ZigZag Section Fixes */
+    .zigzag-section {
+        padding: 3rem 5%;
+    }
+    .zigzag-row {
+        flex-direction: column !important;
+        gap: 2rem !important; /* Override large desktop gap */
+        margin-bottom: 3rem;
+    }
+    .zigzag-content {
+        padding-left: 0;
+        width: 100%;
+    }
+    .zigzag-image {
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* Typography Scaling */
+    h1 { font-size: 1.8rem !important; }
+    h2 { font-size: 1.5rem !important; }
+    h3 { font-size: 1.3rem !important; }
+    
+    /* Footer Fixes */
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack footer columns */
+        gap: 2rem;
+        text-align: center;
+    }
+    .footer-brand, .footer-info {
+        width: 100%;
+    }
+    
+    /* General Container Fixes */
+    section {
+        padding: 3rem 5%;
+        overflow: hidden; /* Prevent internal overflows */
+    }
+    
+    /* Video Section Mobile */
+    .video-wrapper {
+        margin-bottom: 1rem;
+    }
+    .video-thumbs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        justify-content: flex-start;
+    }
+    .video-thumb {
+        flex: 0 0 120px; /* Fixed width for scrolling thumbs */
+    }
+}
+
