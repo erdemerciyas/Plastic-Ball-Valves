@@ -62,3 +62,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+    // Language Switching Logic
+    window.changeLanguage = function(lang) {
+        if (!languageResources[lang]) {
+            console.error('Language resource not found for:', lang);
+            return;
+        }
+
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(languageResources[lang], 'text/xml');
+        const resources = xmlDoc.getElementsByTagName('string');
+        const langData = {};
+
+        for (let i = 0; i < resources.length; i++) {
+            const name = resources[i].getAttribute('name');
+            const value = resources[i].textContent;
+            langData[name] = value;
+        }
+
+        updateContent(langData);
+        localStorage.setItem('selectedLanguage', lang);
+        
+        // Update active state of buttons
+        document.querySelectorAll('.language-switcher button').forEach(btn => {
+            if (btn.innerText.toLowerCase() === lang) {
+                btn.style.opacity = '1';
+                btn.style.fontWeight = 'bold';
+            } else {
+                btn.style.opacity = '0.7';
+                btn.style.fontWeight = 'normal';
+            }
+        });
+    };
+
+    function updateContent(langData) {
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (langData[key]) {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = langData[key];
+                } else {
+                    element.innerHTML = langData[key];
+                }
+            }
+        });
+    }
+
+    // Initialize Language
+    const savedLang = localStorage.getItem('selectedLanguage') || 'tr';
+    changeLanguage(savedLang);
+
